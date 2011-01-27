@@ -9,7 +9,22 @@
 /* Begin PBXBuildFile section */
 		8D5B49B4048680CD000E48DA /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7ADFEA557BF11CA2CBB /* Cocoa.framework */; };
 		B2FE672D12EEFD5F00D1B68F /* GitXPatch.m in Sources */ = {isa = PBXBuildFile; fileRef = B2FE672C12EEFD5F00D1B68F /* GitXPatch.m */; };
+		B2FE6EAF12F19DC700D1B68F /* GitXPatch.png in Copy Resources */ = {isa = PBXBuildFile; fileRef = B2FE6EA712F19DA700D1B68F /* GitXPatch.png */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		B2FE6EB012F19DE600D1B68F /* Copy Resources */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 7;
+			files = (
+				B2FE6EAF12F19DC700D1B68F /* GitXPatch.png in Copy Resources */,
+			);
+			name = "Copy Resources";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		089C1672FE841209C02AAC07 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
@@ -19,6 +34,7 @@
 		8D5B49B7048680CD000E48DA /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B2FE672B12EEFD5F00D1B68F /* GitXPatch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GitXPatch.h; sourceTree = "<group>"; };
 		B2FE672C12EEFD5F00D1B68F /* GitXPatch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GitXPatch.m; sourceTree = "<group>"; };
+		B2FE6EA712F19DA700D1B68F /* GitXPatch.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = GitXPatch.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +74,7 @@
 			isa = PBXGroup;
 			children = (
 				8D5B49B7048680CD000E48DA /* Info.plist */,
+				B2FE6EA712F19DA700D1B68F /* GitXPatch.png */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -94,6 +111,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1DEB913A08733D840010E9CD /* Build configuration list for PBXNativeTarget "GitXPatch" */;
 			buildPhases = (
+				B2FE6EB012F19DE600D1B68F /* Copy Resources */,
 				8D5B49B1048680CD000E48DA /* Sources */,
 				8D5B49B3048680CD000E48DA /* Frameworks */,
 				B2FE680112EEFDB700D1B68F /* Create link to Plugins dir */,
