@@ -6,11 +6,35 @@
 	objectVersion = 45;
 	objects = {
 
+/* Begin PBXAggregateTarget section */
+		B2FB473D12F58CD7009204EC /* Build version */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = B2FB474612F58D04009204EC /* Build configuration list for PBXAggregateTarget "Build version" */;
+			buildPhases = (
+				B2FB473C12F58CD7009204EC /* ShellScript */,
+			);
+			dependencies = (
+			);
+			name = "Build version";
+			productName = "Build version";
+		};
+/* End PBXAggregateTarget section */
+
 /* Begin PBXBuildFile section */
 		8D5B49B4048680CD000E48DA /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7ADFEA557BF11CA2CBB /* Cocoa.framework */; };
 		B2FE672D12EEFD5F00D1B68F /* GitXPatch.m in Sources */ = {isa = PBXBuildFile; fileRef = B2FE672C12EEFD5F00D1B68F /* GitXPatch.m */; };
 		B2FE6EAF12F19DC700D1B68F /* GitXPatch.png in Copy Resources */ = {isa = PBXBuildFile; fileRef = B2FE6EA712F19DA700D1B68F /* GitXPatch.png */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		B2FB474212F58CE1009204EC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 089C1669FE841209C02AAC07 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B2FB473D12F58CD7009204EC /* Build version */;
+			remoteInfo = "Build version";
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
 		B2FE6EB012F19DE600D1B68F /* Copy Resources */ = {
@@ -121,6 +145,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				B2FB474312F58CE1009204EC /* PBXTargetDependency */,
 			);
 			name = GitXPatch;
 			productInstallPath = "$(HOME)/Library/Bundles";
@@ -141,11 +166,25 @@
 			projectRoot = "";
 			targets = (
 				8D5B49AC048680CD000E48DA /* GitXPatch */,
+				B2FB473D12F58CD7009204EC /* Build version */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		B2FB473C12F58CD7009204EC /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "INFO_DOMAIN=\"$(pwd)\"/Info\ndefaults write \"$(pwd)\"/Info CFBundleVersion -int $(($(defaults read $INFO_DOMAIN CFBundleVersion) + 1))\nplutil -convert xml1 $INFO_DOMAIN.plist\ntouch $INFO_DOMAIN.plist\n";
+		};
 		B2FE680112EEFDB700D1B68F /* Create link to Plugins dir */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -200,6 +239,14 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		B2FB474312F58CE1009204EC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B2FB473D12F58CD7009204EC /* Build version */;
+			targetProxy = B2FB474212F58CE1009204EC /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		1DEB913B08733D840010E9CD /* Debug */ = {
@@ -263,6 +310,27 @@
 			};
 			name = Release;
 		};
+		B2FB473E12F58CD8009204EC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				PRODUCT_NAME = "Build version";
+			};
+			name = Debug;
+		};
+		B2FB473F12F58CD8009204EC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				PRODUCT_NAME = "Build version";
+				ZERO_LINK = NO;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -280,6 +348,15 @@
 			buildConfigurations = (
 				1DEB913F08733D840010E9CD /* Debug */,
 				1DEB914008733D840010E9CD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B2FB474612F58D04009204EC /* Build configuration list for PBXAggregateTarget "Build version" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B2FB473E12F58CD8009204EC /* Debug */,
+				B2FB473F12F58CD8009204EC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
