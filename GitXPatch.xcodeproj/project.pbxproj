@@ -6,20 +6,6 @@
 	objectVersion = 45;
 	objects = {
 
-/* Begin PBXAggregateTarget section */
-		B2FB473D12F58CD7009204EC /* Build version */ = {
-			isa = PBXAggregateTarget;
-			buildConfigurationList = B2FB474612F58D04009204EC /* Build configuration list for PBXAggregateTarget "Build version" */;
-			buildPhases = (
-				B2FB473C12F58CD7009204EC /* ShellScript */,
-			);
-			dependencies = (
-			);
-			name = "Build version";
-			productName = "Build version";
-		};
-/* End PBXAggregateTarget section */
-
 /* Begin PBXBuildFile section */
 		8D5B49B4048680CD000E48DA /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7ADFEA557BF11CA2CBB /* Cocoa.framework */; };
 		B2FE672D12EEFD5F00D1B68F /* GitXPatch.m in Sources */ = {isa = PBXBuildFile; fileRef = B2FE672C12EEFD5F00D1B68F /* GitXPatch.m */; };
@@ -27,12 +13,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		B2FB474212F58CE1009204EC /* PBXContainerItemProxy */ = {
+		B27348F812F7681500B698BC /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 089C1669FE841209C02AAC07 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = B2FB473D12F58CD7009204EC /* Build version */;
-			remoteInfo = "Build version";
+			remoteGlobalIDString = B2FB47DF12F5A9B7009204EC /* Increment build version */;
+			remoteInfo = "Increment build version";
 		};
 /* End PBXContainerItemProxy section */
 
@@ -130,6 +116,23 @@
 		};
 /* End PBXGroup section */
 
+/* Begin PBXLegacyTarget section */
+		B2FB47DF12F5A9B7009204EC /* Increment build version */ = {
+			isa = PBXLegacyTarget;
+			buildArgumentsString = "rake build:increment";
+			buildConfigurationList = B2FB47E612F5A9F9009204EC /* Build configuration list for PBXLegacyTarget "Increment build version" */;
+			buildPhases = (
+			);
+			buildToolPath = /usr/bin/env;
+			buildWorkingDirectory = "";
+			dependencies = (
+			);
+			name = "Increment build version";
+			passBuildSettingsInEnvironment = 1;
+			productName = "Increment build version";
+		};
+/* End PBXLegacyTarget section */
+
 /* Begin PBXNativeTarget section */
 		8D5B49AC048680CD000E48DA /* GitXPatch */ = {
 			isa = PBXNativeTarget;
@@ -145,7 +148,7 @@
 			buildRules = (
 			);
 			dependencies = (
-				B2FB474312F58CE1009204EC /* PBXTargetDependency */,
+				B27348F912F7681500B698BC /* PBXTargetDependency */,
 			);
 			name = GitXPatch;
 			productInstallPath = "$(HOME)/Library/Bundles";
@@ -166,25 +169,12 @@
 			projectRoot = "";
 			targets = (
 				8D5B49AC048680CD000E48DA /* GitXPatch */,
-				B2FB473D12F58CD7009204EC /* Build version */,
+				B2FB47DF12F5A9B7009204EC /* Increment build version */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		B2FB473C12F58CD7009204EC /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "INFO_DOMAIN=\"$(pwd)\"/Info\ndefaults write \"$(pwd)\"/Info CFBundleVersion -int $(($(defaults read $INFO_DOMAIN CFBundleVersion) + 1))\nplutil -convert xml1 $INFO_DOMAIN.plist\ntouch $INFO_DOMAIN.plist\n";
-		};
 		B2FE680112EEFDB700D1B68F /* Create link to Plugins dir */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -241,10 +231,10 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		B2FB474312F58CE1009204EC /* PBXTargetDependency */ = {
+		B27348F912F7681500B698BC /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = B2FB473D12F58CD7009204EC /* Build version */;
-			targetProxy = B2FB474212F58CE1009204EC /* PBXContainerItemProxy */;
+			target = B2FB47DF12F5A9B7009204EC /* Increment build version */;
+			targetProxy = B27348F812F7681500B698BC /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -310,23 +300,23 @@
 			};
 			name = Release;
 		};
-		B2FB473E12F58CD8009204EC /* Debug */ = {
+		B2FB47E012F5A9B7009204EC /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				COPY_PHASE_STRIP = NO;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
-				PRODUCT_NAME = "Build version";
+				PRODUCT_NAME = "Increment build version";
 			};
 			name = Debug;
 		};
-		B2FB473F12F58CD8009204EC /* Release */ = {
+		B2FB47E112F5A9B7009204EC /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				GCC_ENABLE_FIX_AND_CONTINUE = NO;
-				PRODUCT_NAME = "Build version";
+				PRODUCT_NAME = "Increment build version";
 				ZERO_LINK = NO;
 			};
 			name = Release;
@@ -352,11 +342,11 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		B2FB474612F58D04009204EC /* Build configuration list for PBXAggregateTarget "Build version" */ = {
+		B2FB47E612F5A9F9009204EC /* Build configuration list for PBXLegacyTarget "Increment build version" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				B2FB473E12F58CD8009204EC /* Debug */,
-				B2FB473F12F58CD8009204EC /* Release */,
+				B2FB47E012F5A9B7009204EC /* Debug */,
+				B2FB47E112F5A9B7009204EC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
