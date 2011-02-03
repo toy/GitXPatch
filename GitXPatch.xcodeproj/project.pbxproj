@@ -17,7 +17,7 @@
 			isa = PBXContainerItemProxy;
 			containerPortal = 089C1669FE841209C02AAC07 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = B2FB47DF12F5A9B7009204EC /* Increment build version */;
+			remoteGlobalIDString = B2FB47DF12F5A9B7009204EC;
 			remoteInfo = "Increment build version";
 		};
 /* End PBXContainerItemProxy section */
@@ -201,7 +201,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /usr/bin/osascript;
-			shellScript = "if (system attribute \"NO_RESTART\") is equal to \"\" then\n\ttell application \"GitX\" to quit\n\ttell application \"Console\" to activate\n\tdo shell script \"open -b nl.frim.GitX\"\nend if\n";
+			shellScript = "set appName to \"GitX\"\nif (system attribute \"NO_RESTART\") is equal to \"\" then\n\ttell application appName to quit\n\ttell application \"Console\" to activate\n\ttell application \"System Events\"\n\t\trepeat while (exists process appName)\n\t\t\tdelay 0.5\n\t\tend repeat\n\tend tell\n\ttell application appName to activate\nend if\n";
 		};
 		B2FE6EF212F1E71300D1B68F /* Set icon */ = {
 			isa = PBXShellScriptBuildPhase;
